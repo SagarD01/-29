@@ -1,0 +1,65 @@
+#include <iostream>;
+#include <math>
+using namespace std;
+
+double calc(double num1, double num2, int oper){
+	int c;
+	switch (oper) {
+	case 1:
+		return num1 + num2;
+		break;
+	case 2:
+		return num1 - num2;
+		break;
+	case 3:
+		return num1 * num2;
+		break;
+	case 4:
+		return num1 / num2;
+		break;
+	case 5:
+		return int(num1) % int(num2);
+		break;
+	case 6:
+		return num1 * num2;
+		break;
+	case 7:
+		pow();
+		break;
+	case 8:
+		return num1 + num2;
+		break;
+	case 9:
+		return sin(num1);
+		break;
+	case 10:
+		return cos(num1);
+		break;
+	}
+	
+}
+
+int main() {
+	setlocale(0,"");
+	float num1;
+	float num2;
+	char oper;
+	
+	cout << "[1]Сложение"<<endl;
+	cout << "[2]Вычитание" << endl;
+	cout << "[3]Умножение" << endl;
+	cout << "[4]Деление" << endl;
+	cout << "[5]Деление от остатка" << endl;
+	cout << "[6]Степень" << endl;
+	cout << "[7]Корень" << endl;
+	cout << "[8]Куб" << endl;
+	cout << "[9]Синус" << endl;
+	cout << "[10]Косинус" << endl;
+	cout << "Введите число: " << endl;
+	cin >> num1;
+	cout << "Введите второе число: " << endl;
+	cin >> num2;
+	cout << "Введите операцию: ";
+	cin >> oper;
+	cout << calc(num1, num2, oper);
+}
