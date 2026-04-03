@@ -1,9 +1,10 @@
 #include <iostream>;
-#include <math>
+#include <Windows.h>
+#include<cmath>
 using namespace std;
 
-double calc(double num1, double num2, int oper){
-	int c;
+double calc(double num1, double num2, int oper) {
+	
 	switch (oper) {
 	case 1:
 		return num1 + num2;
@@ -21,31 +22,44 @@ double calc(double num1, double num2, int oper){
 		return int(num1) % int(num2);
 		break;
 	case 6:
-		return num1 * num2;
+		return pow(num1, num2);
 		break;
 	case 7:
-		pow();
+		return pow(num1, 1/num2);
 		break;
 	case 8:
-		return num1 + num2;
-		break;
-	case 9:
-		return sin(num1);
-		break;
-	case 10:
-		return cos(num1);
+		return pow(num1, 3);
+		return pow(num2, 3);
+		
 		break;
 	}
-	
+
+}
+double sincosCALC(float num1, int oper) {
+	switch (oper) {
+	case 9: {
+		double angle = num1 * (3.14 / 180);
+		return sin(angle);
+		break;
+	}
+	case 10: {
+		double angle = num1 * (3.14 / 180);
+		return cos(angle);
+		break;
+	}
+	}
 }
 
 int main() {
-	setlocale(0,"");
-	float num1;
-	float num2;
-	char oper;
-	
-	cout << "[1]Сложение"<<endl;
+
+	SetConsoleCP(65001);
+	SetConsoleOutputCP(65001);
+
+	double num1;
+	double num2;
+	int menu;
+
+	cout << "[1]Сложение" << endl;
 	cout << "[2]Вычитание" << endl;
 	cout << "[3]Умножение" << endl;
 	cout << "[4]Деление" << endl;
@@ -55,11 +69,49 @@ int main() {
 	cout << "[8]Куб" << endl;
 	cout << "[9]Синус" << endl;
 	cout << "[10]Косинус" << endl;
-	cout << "Введите число: " << endl;
+	cout << "Введите число: ";
+
 	cin >> num1;
-	cout << "Введите второе число: " << endl;
+	cout << "Введите второе число: ";
 	cin >> num2;
 	cout << "Введите операцию: ";
-	cin >> oper;
-	cout << calc(num1, num2, oper);
+	cin >> menu;
+
+	switch (menu) {
+	case 1:
+		cout << calc(num1, num2, 1);
+		break;
+	case 2:
+		cout << calc(num1, num2, 2);
+		break;
+	case 3:
+		cout << calc(num1, num2, 3);
+		break;
+	case 4:
+		cout<<calc(num1, num2, 4);
+		break;
+	case 5:
+		cout<<calc(num1, num2, 5);
+		break;
+	case 6:
+		cout<<calc(num1, num2, 6);
+		break;
+	case 7:
+		cout<<calc(num1, num2, 7);
+		break;
+	case 8:
+		cout<<calc(num1, num2, 8);
+		break;
+	case 9:
+		cout << sincosCALC(num1, 9);
+		break;
+	case 10:
+		cout << sincosCALC(num1, 10);
+		break;
+	}
+
+
+	int _;
+	cin >> _;
 }
+	
