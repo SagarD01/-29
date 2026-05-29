@@ -1,117 +1,244 @@
-#include <iostream>;
+#include <iostream>
 #include <Windows.h>
-#include<cmath>
+
 using namespace std;
 
-double calc(double num1, double num2, int oper) {
-	
-	switch (oper) {
+
+
+
+string name_2(string name2, int enter, int color2) {//Насройки игрока 2
+
+	system("cls");
+
+	switch (enter) {
+		system("cls");
 	case 1:
-		return num1 + num2;
+		if (true) {
+			cout << "Введите ник" << endl;
+			cout << "Ввод: ";
+			cin >> name2;
+			return "";
+		}
 		break;
+
 	case 2:
-		return num1 - num2;
+		cout << "Выберите цвет ника" << endl;
+		cout << "" << endl;
+		cout << "Ввод: ";
+		cin >> color2;
+		break;
+		return "";
+	case 3:
+		if (true) {
+			return "";
+		}
+		break;
+	}
+	system("cls");
+}
+
+
+
+
+
+
+string name_1(string name1, int enter) {//Насройки игрока 2
+
+	system("cls");
+
+	switch (enter) {
+		system("cls");
+	case 1:
+		cout << "Введите ник" << endl;
+		cout << "Ввод: ";
+		cin >> name1;
+		return "";
 		break;
 	case 3:
-		return num1 * num2;
-		break;
-	case 4:
-		return num1 / num2;
-		break;
-	case 5:
-		return int(num1) % int(num2);
-		break;
-	case 6:
-		return pow(num1, num2);
-		break;
-	case 7:
-		return pow(num1, 1/num2);
-		break;
-	case 8:
-		return pow(num1, 3);
-		return pow(num2, 3);
-		
+		if (true) {
+			return "";
+		}
 		break;
 	}
-
-}
-double sincosCALC(float num1, int oper) {
-	switch (oper) {
-	case 9: {
-		double angle = num1 * (3.14 / 180);
-		return sin(angle);
-		break;
-	}
-	case 10: {
-		double angle = num1 * (3.14 / 180);
-		return cos(angle);
-		break;
-	}
-	}
+	system("cls");
 }
 
 int main() {
 
+
+
 	SetConsoleCP(65001);
 	SetConsoleOutputCP(65001);
 
-	double num1;
-	double num2;
-	int menu;
 
-	cout << "[1]Сложение" << endl;
-	cout << "[2]Вычитание" << endl;
-	cout << "[3]Умножение" << endl;
-	cout << "[4]Деление" << endl;
-	cout << "[5]Деление от остатка" << endl;
-	cout << "[6]Степень" << endl;
-	cout << "[7]Корень" << endl;
-	cout << "[8]Куб" << endl;
-	cout << "[9]Синус" << endl;
-	cout << "[10]Косинус" << endl;
-	cout << "Введите число: ";
+	int enter;//значения
+	int color1=033;//цвет для игрока1
+	int color2=033;//цвет для Игрока2
+	int _;//пустота в конце при выходе
 
-	cin >> num1;
-	cout << "Введите второе число: ";
-	cin >> num2;
-	cout << "Введите операцию: ";
-	cin >> menu;
 
-	switch (menu) {
-	case 1:
-		cout << calc(num1, num2, 1);
-		break;
-	case 2:
-		cout << calc(num1, num2, 2);
-		break;
-	case 3:
-		cout << calc(num1, num2, 3);
-		break;
-	case 4:
-		cout<<calc(num1, num2, 4);
-		break;
-	case 5:
-		cout<<calc(num1, num2, 5);
-		break;
-	case 6:
-		cout<<calc(num1, num2, 6);
-		break;
-	case 7:
-		cout<<calc(num1, num2, 7);
-		break;
-	case 8:
-		cout<<calc(num1, num2, 8);
-		break;
-	case 9:
-		cout << sincosCALC(num1, 9);
-		break;
-	case 10:
-		cout << sincosCALC(num1, 10);
-		break;
+	string name1;
+	string name2;
+
+	string name1_ = "Name1";
+	
+
+	
+
+	cout << "[Меню]" << endl;
+	cout << endl;
+	cout << "[1]Начать игру" << endl;
+	cout << "[2]Статистика" << endl;
+	cout << "[3]Настройки" << endl;
+	cout << "[0]Выйти" << endl;
+	cout << endl;
+	cout << "> | Ввод: ";
+	cin >> enter;
+
+
+
+
+
+
+
+
+
+
+
+	while (true) {
+
+		switch (enter) {
+
+			//игра
+		case 1:
+			break;
+
+			//статистика
+		case 2:
+			break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			//Настройки
+		case 3:
+
+			system("cls");
+
+			cout << "+ | Настройки игрока" << endl;
+			cout << endl;
+			cout << "[1] | Игрок 1" << endl;
+			cout << "[2] | Игрок 2" << endl;
+			cout << "[3] | Выход";
+			cout << endl;
+			cout << " >  | Ввод: ";
+			cin >> enter;
+			cout << endl;
+
+			system("cls");
+
+			if (enter == 1) {
+				cout << "+ | Настройки игрока [1]" << endl;
+				cout << endl;
+				cout << "1 | Ник      : " << name1 << endl;
+				cout << "2 | Цвет     : ";
+				cout << "\033[31mКрасный\033[0m" << endl;
+				cout << "3 | Выход";
+				cout << endl;
+				cout << " >  | Ввод: ";
+				cin >> enter;
+
+				if (enter == 1) {
+
+					switch (enter) {
+
+					case(1):
+						cout << "Введите ник" << endl;
+						cin >> name1;
+						break;
+					case(2):
+						cout << "Выберите цвет" << endl;
+						cout << "Красный";
+						cout << "Синий";
+						cin >> color1;
+						break;
+					}
+				}
+			}
+			
+			if (enter == 2) {
+				cout << "+ | Настройки игрока [2]" << endl;
+				cout << endl;
+				cout << "1 | Ник      : " << name2 << endl;
+				cout << "2 | Цвет     : ";
+				cout << "\033[31mКрасный\033[0m" << endl;
+				cout << "3 | Выход";
+				cout << endl;
+				cout << " >  | Ввод: ";
+				cin >> enter;
+
+				system("cls");
+
+				cout << name_2(name2, enter, color2);
+
+
+			}
+
+			if (enter == 3) {
+				cout << "[Меню]" << endl;
+				cout << endl;
+				cout << "[1]Начать игру" << endl;
+				cout << "[2]Статистика" << endl;
+				cout << "[3]Настройки" << endl;
+				cout << "[0]Выйти" << endl;
+				cout << "[-]Ввод";
+				cin >> enter;
+			}
+			break;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			//выход из игры
+		case 0:
+
+			system("cls");
+			cout << "Вы вышли из игры";
+			cin >> _;
+			return 0;
+			break;
+		}
 	}
 
 
-	int _;
-	cin >> _;
+
+
+
+
+
 }
-	
